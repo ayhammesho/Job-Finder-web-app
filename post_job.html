@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Post Your job</title>
+  </head>
+  <body style="background-image: none">
+    <header id="post_job" class="bg_gradient">
+      <div class="hero-form">
+        <h1 class="form-heading">Post a job</h1>
+        <form onsubmit="return false">
+          <div class="filed">
+            <ion-icon name="person-outline"></ion-icon>
+            <input
+              placeholder="Job Name"
+              id="jobname"
+              class="form-control"
+              type="text"
+              required="required"
+            />
+          </div>
+
+          <div class="filed">
+            <ion-icon name="time-outline"></ion-icon>
+            <select
+              name="worktime"
+              id="worktime"
+              class="filter"
+              required="required"
+            >
+              <option value="none">Job time</option>
+              <option value="full-time">Full-time</option>
+              <option value="part-time">Part-time</option>
+            </select>
+          </div>
+
+          <div class="filed">
+            <ion-icon name="location-outline"></ion-icon>
+            <select
+              name="country"
+              id="country"
+              class="filter"
+              required="required"
+            >
+              <option value="">select country</option>
+              <option value="aleppo">Aleppo</option>
+              <option value="hama">Hama</option>
+              <option value="damascus">Damascus</option>
+              <option value="homs">Homs</option>
+            </select>
+          </div>
+
+          <div class="filed">
+            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+            <textarea
+              placeholder="Enter The Job Description Here"
+              name="job-descrption"
+              id="descreption"
+              required="required"
+            ></textarea>
+          </div>
+          <button class="btn post">Add Job</button>
+        </form>
+      </div>
+    </header>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="javascript/postjob.js"></script>
+  </body>
+</html>

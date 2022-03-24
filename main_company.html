@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Job Finder || Main</title>
+  </head>
+  <body style="background-image: none">
+    <header class="heed">
+      <nav class="navbar container">
+        <a onclick="localStorage.removeItem('login');" href="index.html"
+          ><img src="img/logo-filed.png" alt="" class="logo logo_filed"
+        /></a>
+        <ul class="nav-links">
+          <a class="nav-link active" href="post_job.html"
+            ><li>Post a Job</li></a
+          >
+        </ul>
+      </nav>
+      <section class="job_finder container">
+        <h1 class="section_header">Remote jobs</h1>
+        <p class="section_descreption">
+          Find your next remote job at companies like Google, Apple, Facebook
+          and Twitter.
+        </p>
+        <div class="search_bar">
+          <ion-icon name="search-outline"></ion-icon>
+          <input id="search" class="search_bar" type="text" />
+        </div>
+        <div class="filters">
+          <select name="country" id="country" class="filter">
+            <option value="none">select country</option>
+            <option value="aleppo">Aleppo</option>
+            <option value="hama">Hama</option>
+            <option value="damascus">Damascus</option>
+            <option value="homs">Homs</option>
+          </select>
+          <select name="worktime" id="time" class="filter">
+            <option value="">select your time</option>
+            <option value="full-time">Full-time</option>
+            <option value="part-time">Part-time</option>
+          </select>
+        </div>
+      </section>
+    </header>
+    <section class="jobs" id="post-job"></section>
+    <div class="overlay"></div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="javascript/creat_job.js"></script>
+  </body>
+</html>

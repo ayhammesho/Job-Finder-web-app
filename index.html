@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Job Finder || find your job next Dream job</title>
+  </head>
+  <body style="overflow: hidden">
+    <header class="header">
+      <nav class="navbar container">
+        <a href="#"><img src="img/logo.png" alt="" class="logo" /></a>
+        <ul class="nav-links">
+          <a href="#" class="nav-link signup"><li>Sign Up</li></a>
+          <a class="nav-link signin" href="#"><li>Sign In</li></a>
+        </ul>
+      </nav>
+
+      <div class="hero container">
+        <div class="hero-main">
+          <h1 class="main_heading">Join the remote work community</h1>
+          <p class="main_subheading">
+            Experience the remote ecosystem - find a remote job you love,
+            research the fastest-growing remote companies, and hire experienced
+            remote workers.
+          </p>
+          <a href="#" class="btn">apply now</a>
+        </div>
+        <div id="signup" class="hero-form">
+          <h1 class="form-heading">create an account</h1>
+          <form onsubmit="return false">
+            <div class="filed">
+              <ion-icon name="person-outline"></ion-icon>
+              <input
+                id="full_name"
+                placeholder="FullName"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="filed">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input id="email" placeholder="Email" type="email" required />
+            </div>
+
+            <div class="filed">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input
+                id="password"
+                placeholder="Password"
+                type="password"
+                required
+              />
+            </div>
+
+            <div class="filed">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input
+                id="r-password"
+                placeholder="Repeat Password"
+                type="password"
+                required
+              />
+            </div>
+            <h2 class="head">Sign Up as :</h2>
+            <div class="filed">
+              <input type="radio" id="company" name="check" value="company" />
+              <label for="company">User</label>
+              <input type="radio" id="person" name="check" value="person" />
+              <label for="person">Company</label>
+            </div>
+            <!-- <span>by clicking the sign up button you agree to our terms.</span> -->
+            <span id="error"></span>
+            <button type="submit" href="main.html" class="btn addus">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div id="signin" class="hero-form">
+          <h1 class="form-heading">Sign in</h1>
+          <form onsubmit="return false">
+            <div class="filed">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input
+                class="email_signin"
+                placeholder=" Your Email"
+                type="email"
+                required
+              />
+            </div>
+
+            <div class="filed">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input
+                class="password_signin"
+                placeholder="Password"
+                type="password"
+                required
+              />
+            </div>
+            <span id="err"></span>
+
+            <button type="submit" href="main.html" class="btn sign">
+              sign in
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="javascript/main.js"></script>
+  </body>
+</html>

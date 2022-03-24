@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Apply to Your Dream Job</title>
+  </head>
+  <body style="background-image: none">
+    <header class="bg_gradient">
+      <div class="hero-form">
+        <h1 class="form-heading">Company Name</h1>
+        <form>
+          <div class="filed">
+            <ion-icon name="person-outline"></ion-icon>
+            <input placeholder="FullName" type="text" required="required" />
+          </div>
+
+          <div class="filed">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input placeholder="Email" type="email" required="required" />
+          </div>
+
+          <div class="filed">
+            <ion-icon name="call-outline"></ion-icon>
+            <input
+              placeholder="Phone Number"
+              type="number"
+              pattern="^\d{10}$"
+              required="required"
+            />
+          </div>
+
+          <div class="filed">
+            <ion-icon name="document-outline"></ion-icon>
+            <div>
+              <label for="cv">Upload Your CV Here &DownArrow;</label>
+              <input
+                type="file"
+                id="cv"
+                aria-label="File browser"
+                accept=".pdf,.docx"
+                required="required"
+              />
+              .
+            </div>
+          </div>
+          <a href="#" class="btn">Submit</a>
+        </form>
+      </div>
+    </header>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
