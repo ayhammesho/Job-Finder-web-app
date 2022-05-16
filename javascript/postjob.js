@@ -1,10 +1,14 @@
 const country = document.querySelector("#country");
 const worktime = document.querySelector("#worktime");
 const jobName = document.querySelector("#jobname");
-const description = document.querySelector("#descreption");
+let description = document.querySelector("#descreption");
 const postBtn = document.querySelector(".post");
 let companyName = localStorage.getItem("login");
 companyName = JSON.parse(companyName);
+
+const addNewLine = function () {
+  description.value = description.value.replaceAll("\n", "<br>");
+};
 
 // FOR STORING THE JOB CARD IN LOCAL STORAGE
 const postJob = function () {

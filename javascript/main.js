@@ -23,6 +23,8 @@ const error = document.querySelector("#error");
 const err = document.querySelector("#err");
 const emailSignIn = document.querySelector(".email_signin");
 const passwordSignIn = document.querySelector(".password_signin");
+const dialog = document.querySelector(".dialog");
+const btnConfirm = document.querySelector(".btn_confirm");
 
 let storage;
 
@@ -149,7 +151,15 @@ const checkErrorSignUp = function (e) {
 
   // CHECKING INPUT ERRORS
   if (result) {
-    if (!person.checked && !company.checked) {
+    if (
+      !email.value.length ||
+      !password.value.length ||
+      !rPassword.value.length ||
+      !fullName.value.length
+    ) {
+      result = false;
+      raiseError("All fileds are required", !result);
+    } else if (!person.checked && !company.checked) {
       result = false;
 
       raiseError(" must choose Company or User", !result);
@@ -193,7 +203,8 @@ const addNewUser = function (
         person: person,
       });
       localStorage.setItem("users", JSON.stringify(obj));
-      alert("Your Account has been reigesterd sucssfuly please Sign In now!");
+      dialog.classList.remove("hidden");
+      // alert("Your Account has been reigesterd sucssfuly please Sign In now!");
       // obj["users"].forEach((element) => {
       //   if (element.company)
       //     setTimeout(() => {
@@ -215,7 +226,8 @@ const addNewUser = function (
         person: person,
       });
       localStorage.setItem("users", JSON.stringify(obj));
-      alert("Your Account has been reigesterd sucssfuly please Sign In now!");
+      // alert("Your Account has been reigesterd sucssfuly please Sign In now!");
+      dialog.classList.remove("hidden");
 
       // obj["users"].forEach((element) => {
       //   if (element.company)
@@ -330,6 +342,8 @@ function signin() {
 signSubmit.addEventListener("click", (event) => {
   signin();
 });
+
+btnConfirm.addEventListener("click", () => dialog.classList.add("hidden"));
 
 //
 //

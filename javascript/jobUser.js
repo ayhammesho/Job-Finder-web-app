@@ -1,6 +1,9 @@
 "use strict";
 
 let jb = document.getElementById("post-job");
+const countryFilter = document.getElementById("country");
+const workTimeFilter = document.getElementById("time");
+let search = document.getElementById("search");
 
 // FOR DISPLAYING THE JOB CARD
 const addJob = function (data) {
@@ -15,11 +18,13 @@ const addJob = function (data) {
   <h3 class="company_name">${data.companyName}</h3>
   </div>
   <div class="tags">
-              <span class="time_tag"
+              <span class="time_tag" value=${data.worktime}
               ><ion-icon name="time-outline"></ion-icon>${data.worktime}</span
               >
-              <span class="country_tag"
-              ><ion-icon name="location-outline"></ion-icon>${data.country}</span
+              <span class="country_tag" value=${data.country}
+              ><ion-icon name="location-outline"></ion-icon>${
+                data.country
+              }</span
               >
               </div>
               </div>
@@ -29,7 +34,11 @@ const addJob = function (data) {
               </div>
         </div>
         <div class="job_descrption">
-        <p>${data.description}</p>
+        <p class="desc_text">${
+          data.description.includes("\n")
+            ? data.description.replaceAll("\n", "<br>")
+            : data.description
+        }</p>
         </div>
         </div>`;
 
@@ -62,3 +71,51 @@ for (let i = 0; i < showDescription.length; i++) {
     }
   });
 }
+
+const jobCards = document.querySelectorAll(".job_card");
+const countryTag = document.querySelectorAll(".country_tag");
+const timeTag = document.querySelectorAll(".time_tag");
+
+// FILTER
+const dd = function () {
+  const selectedCountry = countryFilter.value;
+  const selectedTime = workTimeFilter.value;
+  for (let v = 0; v < jobCards.length; v++) {
+    if (
+      selectedCountry == countryTag[v].textContent &&
+      selectedTime == timeTag[v].textContent
+    ) {
+      jobCards[v].style.display = "block";
+    } else if (
+      selectedCountry == "" &&
+      selectedTime == timeTag[v].textContent
+    ) {
+      jobCards[v].style.display = "block";
+    } else if (
+      selectedTime == "" &&
+      selectedCountry == countryTag[v].textContent
+    ) {
+      jobCards[v].style.display = "block";
+    } else if (selectedTime == "" && selectedCountry == "") {
+      jobCards[v].style.display = "block";
+    } else jobCards[v].style.display = "none";
+  }
+};
+
+// SEARCH BAR
+search.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+  jobCards.forEach((jobCard) => {
+    const jobTitleSearch = jobCard
+      .querySelector("#job_name")
+      .textContent.toLowerCase();
+    const jobDescSearch = jobCard
+      .querySelector(".desc_text")
+      .textContent.toLowerCase();
+    const isVisible =
+      jobTitleSearch.includes(value) || jobDescSearch.includes(value);
+    if (isVisible) {
+      return (jobCard.style.display = "block");
+    } else return (jobCard.style.display = "none");
+  });
+});

@@ -34,14 +34,14 @@
           <input id="search" class="search_bar" type="text" />
         </div>
         <div class="filters">
-          <select name="country" id="country" class="filter">
-            <option value="none">select country</option>
+          <select name="country" id="country" class="filter" onchange="dd()">
+            <option value="">select country</option>
             <option value="aleppo">Aleppo</option>
             <option value="hama">Hama</option>
             <option value="damascus">Damascus</option>
             <option value="homs">Homs</option>
           </select>
-          <select name="worktime" id="time" class="filter">
+          <select name="worktime" id="time" class="filter" onchange="dd()">
             <option value="">select your time</option>
             <option value="full-time">Full-time</option>
             <option value="part-time">Part-time</option>
